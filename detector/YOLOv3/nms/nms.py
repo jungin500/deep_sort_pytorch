@@ -3,9 +3,9 @@ import torchvision
 
 try:
     import torch
-    import torch_extension
+    import yolov3_nms_ext
 
-    _nms = torch_extension.nms
+    _nms = yolov3_nms_ext.nms
 except ImportError:
     if torchvision.__version__ >= '0.3.0':
         _nms = torchvision.ops.nms

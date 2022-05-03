@@ -40,7 +40,7 @@ def get_extensions():
 
     ext_modules = [
         extension(
-            "torch_extension",
+            "yolov3_nms_ext",
             sources,
             include_dirs=include_dirs,
             define_macros=define_macros,
@@ -52,7 +52,7 @@ def get_extensions():
 
 
 setup(
-    name="torch_extension",
+    name="yolov3_nms_ext",
     version="0.1",
     ext_modules=get_extensions(),
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension})
